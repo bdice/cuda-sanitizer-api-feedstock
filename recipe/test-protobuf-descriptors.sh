@@ -6,6 +6,6 @@ output=$(compute-sanitizer --tool memcheck /bin/true 2>&1)
 echo "${output}"
 
 if grep -q "Check failed" <<< "${output}"; then
-    echo "compute-sanitizer failed to load its protobuf descriptors"
+    echo "compute-sanitizer failed in an unexpected way"
     exit 1
 fi
